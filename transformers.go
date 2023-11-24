@@ -15,8 +15,10 @@ func CapitalizeUppercase(text string) string {
 
 		for i, word := range words {
 			r := []rune(word)
-			r[0] = unicode.ToUpper(r[0])
-			words[i] = string(r)
+			if len(r) > 0 {
+				r[0] = unicode.ToUpper(r[0])
+				words[i] = string(r)
+			}
 		}
 
 		return strings.Join(words, " ")
