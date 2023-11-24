@@ -15,6 +15,13 @@ func main() {
 }
 
 func onReady() {
+	data, err := Asset("winres/taskbaricon.ico")
+	if err != nil {
+		panic("Taskbar icon data not found in binary")
+	}
+
+	systray.SetTemplateIcon(data, data)
+
 	systray.SetTitle("Cliptr")
 	systray.SetTooltip("Cliptr " + Version)
 
