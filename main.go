@@ -4,9 +4,8 @@ import (
 	"github.com/getlantern/systray"
 )
 
-var (
-	handler = NewHandler()
-)
+var Version string
+var handler = NewHandler()
 
 func main() {
 	go func() {
@@ -17,7 +16,7 @@ func main() {
 
 func onReady() {
 	systray.SetTitle("Cliptr")
-	systray.SetTooltip("Cliptr v0.1.0")
+	systray.SetTooltip("Cliptr " + Version)
 
 	handler.AddAction("Trim", "Remove Spaces at start and end of string", Trim)
 	handler.AddAction("Capitalize Uppercase", "Capitalize each word if value is uppercase", CapitalizeUppercase)
