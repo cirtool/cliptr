@@ -10,3 +10,4 @@ build:
 	go-winres make --product-version=git-tag
 	go build -o ./build/cliptr.exe $(GOFLAGS) 
 	cp README.md ./build
+	cp LICENSE ./build
